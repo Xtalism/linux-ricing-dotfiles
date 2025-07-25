@@ -7,6 +7,7 @@ This repository contains my personal dotfiles for a Linux system running [Hyprla
 ![Neovim-Config](assets/screenshots/nvim-config.png)
 ![Rofi](assets/screenshots/rofi.png)
 ![Thunar](assets/screenshots/thunar.png)
+![Kitty](assets/screenshots/kitty.png)
 
 ## Features
 
@@ -16,6 +17,26 @@ This repository contains my personal dotfiles for a Linux system running [Hyprla
 - Terminal and shell configs (e.g., zsh, bash)
 - Editor configs (e.g., Neovim)
 - Scripts and utilities
+
+## Structure
+
+- `hypr/` — Hyprland configs
+- `waybar/` — Waybar status bar configs
+- `scripts/` — Custom scripts
+- `nvim/` — Neovim configs
+- `gtk/` — GTK themes and settings
+- `icons/` - Icon themes
+- `kitty/` — Kitty terminal configs
+- `gtk-theme` — GTK themes
+
+### Setup
+
+I currently don't have an install script, but you can manually copy the files to your home directory or use a symlink approach.
+
+```sh
+git clone https://github.com/Xtalism/linux-ricing-dotfiles.git
+cd dotfiles/
+```
 
 ## Installation
 
@@ -51,24 +72,18 @@ Now in your terminal run `dconf-editor`, navigate to `org/gnome/desktop/interfac
 
 ![GTK Theme Setup](assets/screenshots/gtk-theme-setup.png)
 
-### Setup
+#### Icons
 
-I currently don't have an install script, but you can manually copy the files to your home directory or use a symlink approach.
+It is recommended to created a directory for icons in your home directory, such as `~/.icons`, and then copy the icon theme from this repository to that directory.
 
 ```sh
-git clone https://github.com/Xtalism/linux-ricing-dotfiles.git
-cd dotfiles/
+mkdir -p ~/.icons
+cd ~/.icons
+mv ~/linux-ricing-dotfiles/icons/RoséPine-Moon .
 ```
 
-## Structure
+Once copied, you can set the icon theme using `gsettings`:
 
-- `hypr/` — Hyprland configs
-- `waybar/` — Waybar status bar configs
-- `scripts/` — Custom scripts
-- `nvim/` — Neovim configs
-- `zsh/`, `bash/` — Shell configs
-- `gtk/` — GTK themes and settings
-
-```
-
+```sh
+gsettings set org.gnome.desktop.interface icon-theme "RoséPine-Moon"
 ```
