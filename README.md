@@ -24,16 +24,41 @@ This repository contains my personal dotfiles for a Linux system running [Hyprla
 ### Prerequisites
 
 - Linux (tested on Arch, Fedora, Ubuntu)
-- Hyprland installed
+- Hyprland
+- Wayland
+- Rofi
+- GTK
+- Waybar
 - Git
+
+#### GTK Themes
+
+In order to use the GTK themes, you need to install `dconf-editor`:
+
+```sh
+sudo apt install dconf-editor
+```
+
+Once installed, go to your `~/.themes`, copy the GTK themes from this repository to your `~/.themes` directory.
+
+```sh
+mkdir -p ~/.themes
+cd ~/.themes
+mv ~linux-ricing-dotfiles/gtk-theme/Rosepine-Dark .
+```
+
+Now in your terminal run `dconf-editor`, navigate to `org/gnome/desktop/interface`, and set the `gtk-theme` to `Rosepine-Dark`.
+
+![GTK Theme Setup](assets/screenshots/gtk-theme-setup.png)
 
 ### Setup
 
 I currently don't have an install script, but you can manually copy the files to your home directory or use a symlink approach.
 
 ```sh
-git clone https://github.com/<your-username>/dotfiles.git ~/dotfiles
-cd ~/dotfiles
+git clone https://github.com/Xtalism/linux-ricing-dotfiles.git
+cd dotfiles/
+```
 
 ## Structure
 
@@ -43,4 +68,7 @@ cd ~/dotfiles
 - `nvim/` — Neovim configs
 - `zsh/`, `bash/` — Shell configs
 - `gtk/` — GTK themes and settings
+
+```
+
 ```
