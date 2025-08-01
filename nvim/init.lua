@@ -29,5 +29,6 @@ require('lazy').setup {
     require 'plugins.misc',
     require 'plugins.live-server',
     require 'plugins.github-copilot',
-    --    require 'plugins.hologram',
+    require 'plugins.platformio',
+    -- require 'plugins.hologram',
 }

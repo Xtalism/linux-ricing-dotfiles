@@ -61,7 +61,7 @@ return {
                 -- Use tab for completion
                 complete = {
                     detail = 'Use @<Tab> or /<Tab> for options.',
-                    insert = '<Tab>',
+                    insert = '<S-Tab>',
                 },
                 -- Close the chat
                 close = {

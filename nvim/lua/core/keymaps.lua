@@ -11,17 +11,17 @@ local opts = { noremap = true, silent = true }
 -- ========================================
 -- Arrow Key Movement (Primary Navigation)
 -- ========================================
-vim.keymap.set({'n', 'v'}, '<Up>', 'k', opts)    -- Up
-vim.keymap.set({'n', 'v'}, '<Down>', 'j', opts)  -- Down
-vim.keymap.set({'n', 'v'}, '<Left>', 'h', opts)  -- Left
-vim.keymap.set({'n', 'v'}, '<Right>', 'l', opts) -- Right
+vim.keymap.set({ 'n', 'v' }, '<Up>', 'k', opts) -- Up
+vim.keymap.set({ 'n', 'v' }, '<Down>', 'j', opts) -- Down
+vim.keymap.set({ 'n', 'v' }, '<Left>', 'h', opts) -- Left
+vim.keymap.set({ 'n', 'v' }, '<Right>', 'l', opts) -- Right
 
 -- ========================================
 -- Window Resizing with HJKL
 -- ========================================
 vim.keymap.set('n', 'h', ':vertical resize -2<CR>', opts) -- narrower
-vim.keymap.set('n', 'j', ':resize +2<CR>', opts)          -- taller
-vim.keymap.set('n', 'k', ':resize -2<CR>', opts)         -- shorter
+vim.keymap.set('n', 'j', ':resize +2<CR>', opts) -- taller
+vim.keymap.set('n', 'k', ':resize -2<CR>', opts) -- shorter
 vim.keymap.set('n', 'l', ':vertical resize +2<CR>', opts) -- wider
 
 -- ========================================
@@ -53,9 +53,9 @@ vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- equalize splits
 vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close split
 
 -- Window navigation (using arrow keys)
-vim.keymap.set('n', '<C-Up>', ':wincmd k<CR>', opts)    -- up window
-vim.keymap.set('n', '<C-Down>', ':wincmd j<CR>', opts)  -- down window
-vim.keymap.set('n', '<C-Left>', ':wincmd h<CR>', opts)  -- left window
+vim.keymap.set('n', '<C-Up>', ':wincmd k<CR>', opts) -- up window
+vim.keymap.set('n', '<C-Down>', ':wincmd j<CR>', opts) -- down window
+vim.keymap.set('n', '<C-Left>', ':wincmd h<CR>', opts) -- left window
 vim.keymap.set('n', '<C-Right>', ':wincmd l<CR>', opts) -- right window
 
 -- ========================================
@@ -83,14 +83,29 @@ vim.keymap.set('v', '>', '>gv', opts) -- maintain selection after outdent
 vim.keymap.set('v', 'p', '"_dP', opts) -- paste without overwriting register
 
 -- ========================================
+-- Toggleterminal
+-- ========================================
+vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<cr>', { noremap = true, silent = true })
+
+-- ========================================
+-- Platformio
+-- ========================================
+vim.keymap.set('n', '<leader>pi', ':Pioinit<CR>', opts) -- Initialize PlatformIO project_file
+vim.keymap.set('n', '<leader>pm', ':Piomon<CR>', opts) -- Monitor board output
+vim.keymap.set('n', '<leader>pb', ':Piorun build<CR>', opts) -- Build PlatformIO project
+vim.keymap.set('n', '<leader>pu', ':Piorun<CR>', opts) -- Upload program to device
+vim.keymap.set('n', '<leader>pl', ':Piolib<CR>', opts) -- Library management
+vim.keymap.set('n', '<leader>pd', ':Piodb<CR>', opts) -- Debugger tool
+
+-- ========================================
 -- Diagnostics
 -- ========================================
 vim.keymap.set('n', '[d', function()
-  vim.diagnostic.jump { count = -1, float = true }
+    vim.diagnostic.jump { count = -1, float = true }
 end, { desc = 'Go to previous diagnostic message' })
 
 vim.keymap.set('n', ']d', function()
-  vim.diagnostic.jump { count = 1, float = true }
+    vim.diagnostic.jump { count = 1, float = true }
 end, { desc = 'Go to next diagnostic message' })
 
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })

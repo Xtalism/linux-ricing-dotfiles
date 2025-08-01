@@ -1,6 +1,16 @@
 -- Standalone plugins with less than 10 lines of config go here
 return {
     {
+        'akinsho/toggleterm.nvim',
+        version = '*',
+        opts = {
+            shell = 'bash',
+        },
+    },
+    {
+        'tpope/vim-surround',
+    },
+    {
         'lervag/vimtex',
         lazy = false, -- we don't want to lazy load VimTeX
         -- tag = "v2.15", -- uncomment to pin to a specific release
