@@ -98,6 +98,11 @@ vim.keymap.set('n', '<leader>pl', ':Piolib<CR>', opts) -- Library management
 vim.keymap.set('n', '<leader>pd', ':Piodb<CR>', opts) -- Debugger tool
 
 -- ========================================
+-- Code Runner
+-- ========================================
+vim.keymap.set('n', '<leader>rr', ':RunCode<CR>', opts) -- Run code in current buffer
+
+-- ========================================
 -- Diagnostics
 -- ========================================
 vim.keymap.set('n', '[d', function()

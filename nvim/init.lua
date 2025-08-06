@@ -30,5 +30,7 @@ require('lazy').setup {
     require 'plugins.live-server',
     require 'plugins.github-copilot',
     require 'plugins.platformio',
+    require 'plugins.code-runner',
+    require 'plugins.venv-selector',
     -- require 'plugins.hologram',
 }
