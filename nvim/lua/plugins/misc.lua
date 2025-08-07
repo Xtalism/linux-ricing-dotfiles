@@ -1,6 +1,12 @@
 -- Standalone plugins with less than 10 lines of config go here
 return {
     {
+        'mbbill/undotree',
+    },
+    {
+        'preservim/tagbar',
+    },
+    {
         'akinsho/toggleterm.nvim',
         version = '*',
         opts = {

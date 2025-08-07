@@ -101,6 +101,18 @@ vim.keymap.set('n', '<leader>pd', ':Piodb<CR>', opts) -- Debugger tool
 -- Code Runner
 -- ========================================
 vim.keymap.set('n', '<leader>rr', ':RunCode<CR>', opts) -- Run code in current buffer
+vim.keymap.set('n', '<leader>rc', ':RunClose<CR>', opts) -- Close code runner output
+vim.keymap.set('n', '<leader>rf', ':RunFile<CR>', opts) -- Run current file
+
+-- ========================================
+-- Tagbar
+-- ========================================
+vim.keymap.set('n', '<leader>tb', ':TagbarToggle<CR>', opts) -- Toggle Tagbar
+
+-- ========================================
+-- Undotree
+-- ========================================
+vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle)
 
 -- ========================================
 -- Diagnostics
