@@ -11,6 +11,10 @@ return {
                         return 'python3 ' .. vim.fn.expand '%'
                     end
                 end,
+                matlab = function()
+                    local fullpath = vim.fn.expand '%:p'
+                    return string.format('matlab -nodesktop -nosplash -batch "run %s"', fullpath)
+                end,
                 -- Add other filetypes as needed
             },
             -- Other code_runner options...

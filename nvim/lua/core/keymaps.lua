@@ -107,12 +107,12 @@ vim.keymap.set('n', '<leader>rf', ':RunFile<CR>', opts) -- Run current file
 -- ========================================
 -- Tagbar
 -- ========================================
-vim.keymap.set('n', '<leader>tb', ':TagbarToggle<CR>', opts) -- Toggle Tagbar
+vim.keymap.set('n', '<leader><F6>', ':TagbarToggle<CR>', opts) -- Toggle Tagbar
 
 -- ========================================
 -- Undotree
 -- ========================================
-vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle)
+vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle) -- Toggle Undotree
 
 -- ========================================
 -- Diagnostics

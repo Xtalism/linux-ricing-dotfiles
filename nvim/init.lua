@@ -34,3 +34,5 @@ require('lazy').setup {
     require 'plugins.venv-selector',
     -- require 'plugins.hologram',
 }
+
+require 'plugins.nvim-matlab'
