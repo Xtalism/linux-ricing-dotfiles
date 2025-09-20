@@ -1,6 +1,21 @@
 -- Standalone plugins with less than 10 lines of config go here
 return {
     {
+        'Civitasv/cmake-tools.nvim',
+        opts = {
+            prefix_name = 'cmake',
+            cmake_terminal = 'toggleterm',
+        },
+    },
+    {
+        '3rd/image.nvim',
+        build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
+        opts = {
+            processor = 'magick_cli',
+            backend = 'kitty',
+        },
+    },
+    {
         'mbbill/undotree',
     },
     {
@@ -11,6 +26,11 @@ return {
         version = '*',
         opts = {
             shell = 'bash',
+            direction = 'float',
+            open_mapping = [[<c-\>]],
+            on_open = function(term)
+                vim.api.nvim_buf_set_keymap(term.bufnr, 't', '<esc>', '<cmd>close<CR>', { noremap = true, silent = true })
+            end,
         },
     },
     {

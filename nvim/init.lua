@@ -32,6 +32,7 @@ require('lazy').setup {
     require 'plugins.platformio',
     require 'plugins.code-runner',
     require 'plugins.venv-selector',
+    require 'plugins.ts-autotag',
     -- require 'plugins.hologram',
 }
 

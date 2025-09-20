@@ -94,7 +94,6 @@ vim.keymap.set('n', '<leader>pi', ':Pioinit<CR>', opts) -- Initialize PlatformIO
 vim.keymap.set('n', '<leader>pm', ':Piomon<CR>', opts) -- Monitor board output
 vim.keymap.set('n', '<leader>pb', ':Piorun build<CR>', opts) -- Build PlatformIO project
 vim.keymap.set('n', '<leader>pu', ':Piorun<CR>', opts) -- Upload program to device
-vim.keymap.set('n', '<leader>pl', ':Piolib<CR>', opts) -- Library management
 vim.keymap.set('n', '<leader>pd', ':Piodb<CR>', opts) -- Debugger tool
 
 -- ========================================
@@ -113,6 +112,11 @@ vim.keymap.set('n', '<leader><F6>', ':TagbarToggle<CR>', opts) -- Toggle Tagbar
 -- Undotree
 -- ========================================
 vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle) -- Toggle Undotree
+
+-- ========================================
+-- CMake
+-- =======================================
+vim.keymap.set('n', '<leader>cb', ':CMakeBuild<CR>', opts) -- Open CMake menu
 
 -- ========================================
 -- Diagnostics
