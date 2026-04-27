@@ -19,10 +19,10 @@ vim.keymap.set({ 'n', 'v' }, '<Right>', 'l', opts) -- Right
 -- ========================================
 -- Window Resizing with HJKL
 -- ========================================
-vim.keymap.set('n', 'h', ':vertical resize -2<CR>', opts) -- narrower
-vim.keymap.set('n', 'j', ':resize +2<CR>', opts) -- taller
-vim.keymap.set('n', 'k', ':resize -2<CR>', opts) -- shorter
-vim.keymap.set('n', 'l', ':vertical resize +2<CR>', opts) -- wider
+vim.keymap.set('n', 'h', '<cmd>vertical resize -2<CR>', opts) -- narrower
+vim.keymap.set('n', 'j', '<cmd>resize +2<CR>', opts) -- taller
+vim.keymap.set('n', 'k', '<cmd>resize -2<CR>', opts) -- shorter
+vim.keymap.set('n', 'l', '<cmd>vertical resize +2<CR>', opts) -- wider
 
 -- ========================================
 -- File Operations
@@ -50,29 +50,29 @@ vim.keymap.set('n', 'N', 'Nzzzv', opts) -- prev match centered
 vim.keymap.set('n', '<leader>v', '<C-w>v', opts) -- vertical split
 vim.keymap.set('n', '<leader>h', '<C-w>s', opts) -- horizontal split
 vim.keymap.set('n', '<leader>se', '<C-w>=', opts) -- equalize splits
-vim.keymap.set('n', '<leader>xs', ':close<CR>', opts) -- close split
+vim.keymap.set('n', '<leader>xs', '<cmd>close<CR>', opts) -- close split
 
 -- Window navigation (using arrow keys)
-vim.keymap.set('n', '<C-Up>', ':wincmd k<CR>', opts) -- up window
-vim.keymap.set('n', '<C-Down>', ':wincmd j<CR>', opts) -- down window
-vim.keymap.set('n', '<C-Left>', ':wincmd h<CR>', opts) -- left window
-vim.keymap.set('n', '<C-Right>', ':wincmd l<CR>', opts) -- right window
+vim.keymap.set('n', '<C-Up>', '<cmd>wincmd k<CR>', opts) -- up window
+vim.keymap.set('n', '<C-Down>', '<cmd>wincmd j<CR>', opts) -- down window
+vim.keymap.set('n', '<C-Left>', '<cmd>wincmd h<CR>', opts) -- left window
+vim.keymap.set('n', '<C-Right>', '<cmd>wincmd l<CR>', opts) -- right window
 
 -- ========================================
 -- Buffer Management
 -- ========================================
-vim.keymap.set('n', '<Tab>', ':bnext<CR>', opts) -- next buffer
-vim.keymap.set('n', '<S-Tab>', ':bprevious<CR>', opts) -- prev buffer
-vim.keymap.set('n', '<leader>x', ':bdelete!<CR>', opts) -- close buffer
+vim.keymap.set('n', '<Tab>', '<cmd>bnext<CR>', opts) -- next buffer
+vim.keymap.set('n', '<S-Tab>', '<cmd>bprevious<CR>', opts) -- prev buffer
+vim.keymap.set('n', '<leader>x', '<cmd>bdelete!<CR>', opts) -- close buffer
 vim.keymap.set('n', '<leader>b', '<cmd>enew<CR>', opts) -- new buffer
 
 -- ========================================
 -- Tab Management
 -- ========================================
-vim.keymap.set('n', '<leader>to', ':tabnew<CR>', opts) -- new tab
-vim.keymap.set('n', '<leader>tx', ':tabclose<CR>', opts) -- close tab
-vim.keymap.set('n', '<leader>tn', ':tabn<CR>', opts) -- next tab
-vim.keymap.set('n', '<leader>tp', ':tabp<CR>', opts) -- prev tab
+vim.keymap.set('n', '<leader>to', '<cmd>tabnew<CR>', opts) -- new tab
+vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<CR>', opts) -- close tab
+vim.keymap.set('n', '<leader>tn', '<cmd>tabn<CR>', opts) -- next tab
+vim.keymap.set('n', '<leader>tp', '<cmd>tabp<CR>', opts) -- prev tab
 
 -- ========================================
 -- Other Utilities
@@ -90,23 +90,23 @@ vim.keymap.set('n', '<leader>tt', '<cmd>ToggleTerm<cr>', { noremap = true, silen
 -- ========================================
 -- Platformio
 -- ========================================
-vim.keymap.set('n', '<leader>pi', ':Pioinit<CR>', opts) -- Initialize PlatformIO project_file
-vim.keymap.set('n', '<leader>pm', ':Piomon<CR>', opts) -- Monitor board output
-vim.keymap.set('n', '<leader>pb', ':Piorun build<CR>', opts) -- Build PlatformIO project
-vim.keymap.set('n', '<leader>pu', ':Piorun<CR>', opts) -- Upload program to device
-vim.keymap.set('n', '<leader>pd', ':Piodb<CR>', opts) -- Debugger tool
+-- vim.keymap.set('n', '<leader>pi', '<cmd>Pioinit<CR>', opts) -- Initialize PlatformIO project_file
+-- vim.keymap.set('n', '<leader>pm', '<cmd>Piomon<CR>', opts) -- Monitor board output
+-- vim.keymap.set('n', '<leader>pb', '<cmd>Piorun build<CR>', opts) -- Build PlatformIO project
+-- vim.keymap.set('n', '<leader>pu', '<cmd>Piorun<CR>', opts) -- Upload program to device
+-- vim.keymap.set('n', '<leader>pd', '<cmd>Piodb<CR>', opts) -- Debugger tool
 
 -- ========================================
 -- Code Runner
 -- ========================================
-vim.keymap.set('n', '<leader>rr', ':RunCode<CR>', opts) -- Run code in current buffer
-vim.keymap.set('n', '<leader>rc', ':RunClose<CR>', opts) -- Close code runner output
-vim.keymap.set('n', '<leader>rf', ':RunFile<CR>', opts) -- Run current file
+vim.keymap.set('n', '<leader>rr', '<cmd>RunCode<CR>', opts) -- Run code in current buffer
+vim.keymap.set('n', '<leader>rc', '<cmd>RunClose<CR>', opts) -- Close code runner output
+vim.keymap.set('n', '<leader>rf', '<cmd>RunFile<CR>', opts) -- Run current file
 
 -- ========================================
 -- Tagbar
 -- ========================================
-vim.keymap.set('n', '<leader><F6>', ':TagbarToggle<CR>', opts) -- Toggle Tagbar
+vim.keymap.set('n', '<leader><F6>', '<cmd>TagbarToggle<CR>', opts) -- Toggle Tagbar
 
 -- ========================================
 -- Undotree
@@ -116,7 +116,22 @@ vim.keymap.set('n', '<leader><F5>', vim.cmd.UndotreeToggle) -- Toggle Undotree
 -- ========================================
 -- CMake
 -- =======================================
-vim.keymap.set('n', '<leader>cb', ':CMakeBuild<CR>', opts) -- Open CMake menu
+-- vim.keymap.set('n', '<leader>cb', '<cmd>CMakeBuild<CR>', opts) -- Open CMake menu
+
+-- ========================================
+-- Telescope
+-- =======================================
+vim.keymap.set('n', '<C-k><C-t>', '<cmd>Telescope colorscheme<CR>')
+
+-- ========================================
+-- VenvSelector
+-- =======================================
+vim.keymap.set('n', ',v', '<cmd>VenvSelect<cr>')
+
+-- ========================================
+-- Neotree
+-- =======================================
+vim.keymap.set('n', '<leader>e', ':Neotree toggle position=left<CR>', { noremap = true, silent = true }) -- focus file explorer
 
 -- ========================================
 -- Diagnostics

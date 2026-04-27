@@ -1,28 +1,34 @@
 -- Standalone plugins with less than 10 lines of config go here
 return {
     {
-        'Civitasv/cmake-tools.nvim',
-        opts = {
-            prefix_name = 'cmake',
-            cmake_terminal = 'toggleterm',
-        },
+        'wannesm/wmgraphviz.vim',
+        lazy = true,
+        ft = 'dot',
+        config = function()
+            vim.g.wmgraphviz_viewer = 'zathura'
+        end,
     },
-    {
-        '3rd/image.nvim',
-        build = false, -- so that it doesn't build the rock https://github.com/3rd/image.nvim/issues/91#issuecomment-2453430239
-        opts = {
-            processor = 'magick_cli',
-            backend = 'kitty',
-        },
-    },
+    -- {
+    --     'Civitasv/cmake-tools.nvim',
+    --     opts = {
+    --         prefix_name = 'cmake',
+    --         cmake_terminal = 'toggleterm',
+    --     },
+    -- },
     {
         'mbbill/undotree',
+        lazy = true,
+        cmd = { 'UndotreeToggle', 'UndotreeShow' },
     },
     {
         'preservim/tagbar',
+        lazy = true,
+        cmd = { 'TagbarToggle' },
     },
     {
         'akinsho/toggleterm.nvim',
+        lazy = true,
+        cmd = { 'ToggleTerm' },
         version = '*',
         opts = {
             shell = 'bash',
@@ -36,17 +42,41 @@ return {
     {
         'tpope/vim-surround',
     },
+    -- {
+    --     'lervag/vimtex',
+    --     lazy = true,
+    --     ft = 'tex',
+    --     -- tag = "v2.15", -- uncomment to pin to a specific release
+    --     init = function()
+    --         -- VimTeX configuration goes here, e.g.
+    --         vim.g.vimtex_view_method = 'zathura'
+    --     end,
+    -- },
     {
         'lervag/vimtex',
-        lazy = false, -- we don't want to lazy load VimTeX
+        lazy = true,
+        ft = 'tex',
         -- tag = "v2.15", -- uncomment to pin to a specific release
         init = function()
             -- VimTeX configuration goes here, e.g.
             vim.g.vimtex_view_method = 'zathura'
+
+            -- Add shell-escape for minted package
+            vim.g.vimtex_compiler_latexmk = {
+                options = {
+                    '-pdf',
+                    '-shell-escape',
+                    '-verbose',
+                    '-file-line-error',
+                    '-synctex=1',
+                    '-interaction=nonstopmode',
+                },
+            }
         end,
     },
     {
         'iamcco/markdown-preview.nvim',
+        lazy = true,
         cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
         build = 'cd app && npm install',
         init = function()
@@ -60,14 +90,15 @@ return {
     },
     {
         'mg979/vim-visual-multi',
+        lazy = false,
         keys = {
             { '<C-n>', mode = 'n', '<Plug>(VM-Find-Under' },
         },
     },
-    {
-        -- Tmux & split window navigation
-        'christoomey/vim-tmux-navigator',
-    },
+    -- {
+    --     -- Tmux & split window navigation
+    --     'christoomey/vim-tmux-navigator',
+    -- },
     {
         -- Detect tabstop and shiftwidth automatically
         'tpope/vim-sleuth',

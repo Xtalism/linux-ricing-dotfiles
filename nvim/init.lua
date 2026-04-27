@@ -29,11 +29,11 @@ require('lazy').setup {
     require 'plugins.misc',
     require 'plugins.live-server',
     require 'plugins.github-copilot',
-    require 'plugins.platformio',
+    -- require 'plugins.platformio',
     require 'plugins.code-runner',
-    require 'plugins.venv-selector',
+    -- require 'plugins.venv-selector',
     require 'plugins.ts-autotag',
     -- require 'plugins.hologram',
 }
 
-require 'plugins.nvim-matlab'
+-- require 'plugins.nvim-matlab'
