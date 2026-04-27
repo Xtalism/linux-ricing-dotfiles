@@ -1,6 +1,13 @@
 -- Standalone plugins with less than 10 lines of config go here
 return {
     {
+        'xiyaowong/transparent.nvim',
+        lazy = false,
+        config = function()
+            require('transparent').setup {}
+        end,
+    },
+    {
         'wannesm/wmgraphviz.vim',
         lazy = true,
         ft = 'dot',

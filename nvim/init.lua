@@ -36,4 +36,5 @@ require('lazy').setup {
     -- require 'plugins.hologram',
 }
 
+vim.cmd.colorscheme 'evening'
 -- require 'plugins.nvim-matlab'

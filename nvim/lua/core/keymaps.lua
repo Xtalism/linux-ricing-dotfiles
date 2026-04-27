@@ -134,6 +134,11 @@ vim.keymap.set('n', ',v', '<cmd>VenvSelect<cr>')
 vim.keymap.set('n', '<leader>e', ':Neotree toggle position=left<CR>', { noremap = true, silent = true }) -- focus file explorer
 
 -- ========================================
+-- Transparent
+-- =======================================
+vim.keymap.set('n', '<leader>ts', '<cmd>TransparentToggle<CR>', opts) -- Toggle transparency
+
+-- ========================================
 -- Diagnostics
 -- ========================================
 vim.keymap.set('n', '[d', function()
