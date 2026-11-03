@@ -9,7 +9,7 @@ For the Hyprland setup, see [linux-ricing-dotfiles](https://github.com/Xtalism/l
 ## Install
 
 ```sh
-git clone https://github.com/Xtalism/rosepine-gnome-ubuntu.git
+git clone -b gnome https://github.com/Xtalism/linux-ricing-dotfiles.git
 cd rosepine-gnome-ubuntu
 ./install.sh
 ```
